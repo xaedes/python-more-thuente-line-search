@@ -291,7 +291,7 @@ class MoreThuenteLineSearch:
             if self.approx_eq(f_a.argument, f_b.argument, kStepEps):
                 return f_a.argument
             z = 3 * (f_a.value - f_b.value) / (f_b.argument - f_a.argument) + f_a.derivative + f_b.derivative
-            w = math.sqrt(z*z + f_a.derivative * f_b.derivative)
+            w = math.sqrt(z*z - f_a.derivative * f_b.derivative)
             # Equation 2.4.56 [Sun, Yuan 2006]
             return (
                 f_b.argument 
